@@ -25,6 +25,7 @@
           "options": {
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
+            "polyfills": ["zone.js"],
             "assets": [
               {
                 "glob": "**/*",
@@ -33,12 +34,7 @@
             ],
             "styles": [
               "src/styles.css"
-            ],
-            "server": "src/main.server.ts",
-            "outputMode": "server",
-            "ssr": {
-              "entry": "src/server.ts"
-            }
+            ]
           },
           "configurations": {
             "production": {
@@ -62,7 +58,7 @@
               "sourceMap": true
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "development"
         },
         "serve": {
           "builder": "@angular/build:dev-server",
@@ -83,6 +79,7 @@
           "builder": "@angular/build:karma",
           "options": {
             "tsConfig": "tsconfig.spec.json",
+            "polyfills": ["zone.js"],
             "assets": [
               {
                 "glob": "**/*",
@@ -96,5 +93,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "9267bb47-e6eb-4060-9afb-a0652ca052e0"
   }
 }
