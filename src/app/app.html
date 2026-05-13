@@ -1,0 +1,37 @@
+<div class="app-shell">
+
+  <nav class="app-navbar">
+    <div class="container d-flex align-items-center justify-content-between">
+      <span class="app-brand">
+        <img src="/logo.png" alt="Logo" class="app-logo" />
+        <span>Helpdesk</span>
+      </span>
+      <div class="d-flex gap-2">
+        <button *ngIf="estaLogueado" class="btn-logout" (click)="cerrarSesion()">
+          <i class="bi bi-box-arrow-right me-1"></i> Salir
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div *ngIf="!estaLogueado" class="auth-page">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-6 col-lg-5">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="estaLogueado" class="content-page">
+    <div class="container py-4">
+      <div class="text-center py-5">
+        <i class="bi bi-ticket-perforated" style="font-size: 3rem; color: #3b82f6;"></i>
+        <h3 class="text-light mt-3">Bienvenido a Helpdesk</h3>
+        <p class="text-secondary">Sección de contenido próximamente.</p>
+      </div>
+    </div>
+  </div>
+
+</div>

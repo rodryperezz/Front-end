@@ -1,0 +1,65 @@
+.app-shell {
+  min-height: 100vh;
+  background: #0c0c0e;
+}
+
+.app-navbar {
+  background: linear-gradient(135deg, #0a0a0a, #111118);
+  padding: 1.3rem 0;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid #1e1e28;
+}
+
+.app-brand {
+  color: #f0f0f0;
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  text-transform: uppercase;
+}
+
+.app-logo {
+  height: 42px;
+  width: auto;
+  border-radius: 8px;
+}
+
+.app-brand .bi {
+  font-size: 1.3rem;
+}
+
+.btn-logout {
+  background: rgba(255, 255, 255, 0.06);
+  color: #d0d0d0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-logout:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.auth-page {
+  display: flex;
+  align-items: center;
+  min-height: calc(100vh - 78px);
+  padding: 2rem 0;
+  background: radial-gradient(ellipse at center, #13131a 0%, #0c0c0e 70%);
+}
+
+.content-page {
+  min-height: calc(100vh - 78px);
+  background: #0c0c0e;
+}
