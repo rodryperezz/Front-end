@@ -8,7 +8,7 @@ export class TicketService {
 
   constructor(private http:HttpClient){}
 
-  url = "https://localhost:7150/api/blogs/"
+  url = "https://localhost:7150/api/blogs/" //TODO ESTO CAMBIAR MANIANA
 
   GetPublicaciones(){
     return this.http.get(this.url + "GetPublicaciones")
