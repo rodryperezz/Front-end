@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
-import { BlogService } from '../../../Services/blog-service';
+import { TicketService } from '../../../services-ticket/ticket-service';
 
 interface Comentario {
   Id: number;
@@ -23,7 +23,7 @@ export class Comentarios implements OnInit {
   usuarioIdLogueado: number = 1;
   mostrarFormulario: boolean = false;
 
-  constructor(private service: BlogService, private cdr: ChangeDetectorRef) {}
+  constructor(private service: TicketService, private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {}
 

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { BlogService } from '../../../Services/blog-service';
+import { TicketService } from '../../../services-ticket/ticket-service';
 
 interface Usuario {
   Id: number;
@@ -24,7 +24,7 @@ export class Registro {
   cargando: boolean = false;
   private timeoutId: any = null;
 
-  constructor(private service: BlogService, private router: Router) {}
+  constructor(private service: TicketService, private router: Router) {}
 
   private mostrarNotificacion(tipo: string, mensaje: string): void {
     this.notificacion = { tipo, mensaje };

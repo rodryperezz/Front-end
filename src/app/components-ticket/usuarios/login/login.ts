@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { Router } from '@angular/router';
-import { BlogService } from '../../../Services/blog-service';
+import { TicketService } from '../../../services-ticket/ticket-service';
 
 interface LoginDTO {
   Email: string;
@@ -24,7 +24,7 @@ export class Login implements OnInit, OnDestroy {
   private timeoutId: any = null;
 
   constructor(
-    private service: BlogService,
+    private service: TicketService,
     private router: Router,
     private cdr: ChangeDetectorRef
   ) {}

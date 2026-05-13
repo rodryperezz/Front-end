@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { Login } from './Components/usuarios/login/login';
-import { Registro } from './Components/usuarios/registro/registro';
-import { OlvideContrasenia } from './Components/usuarios/olvide-contrasenia/olvide-contrasenia';
+import { Login } from './components-ticket/usuarios/login/login';
+import { Registro } from './components-ticket/usuarios/registro/registro';
+import { OlvideContrasenia } from './components-ticket/usuarios/olvide-contrasenia/olvide-contrasenia';
 
 const routes: Routes = [
   { path: 'login', component: Login },

@@ -5,11 +5,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
-import { Publicaciones } from './Components/publicaciones/publicaciones/publicaciones';
-import { Comentarios } from './Components/comentarios/comentarios/comentarios';
-import { Login } from './Components/usuarios/login/login';
-import { Registro } from './Components/usuarios/registro/registro';
-import { OlvideContrasenia } from './Components/usuarios/olvide-contrasenia/olvide-contrasenia';
+import { Publicaciones } from './components-ticket/publicaciones/publicaciones/publicaciones';
+import { Comentarios } from './components-ticket/comentarios/comentarios/comentarios';
+import { Login } from './components-ticket/usuarios/login/login';
+import { Registro } from './components-ticket/usuarios/registro/registro';
+import { OlvideContrasenia } from './components-ticket/usuarios/olvide-contrasenia/olvide-contrasenia';
 
 @NgModule({
   declarations: [
