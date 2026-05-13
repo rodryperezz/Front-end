@@ -215,6 +215,7 @@ select.auth-input {
 .auth-link:hover {
   border-bottom-color: #3b82f6;
 }
+<<<<<<< HEAD
 
 .password-reqs {
   margin-top: 0.75rem;
@@ -244,3 +245,5 @@ select.auth-input {
 .password-req.invalid {
   color: #666678;
 }
+=======
+>>>>>>> 41617790ab247961548526b1a8b0eb3a6cdad318

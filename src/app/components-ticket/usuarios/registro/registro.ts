@@ -11,12 +11,15 @@ interface Usuario {
   Rol: string;
 }
 
+<<<<<<< HEAD
 interface PasswordRequirement {
   key: string;
   label: string;
   valid: boolean;
 }
 
+=======
+>>>>>>> 41617790ab247961548526b1a8b0eb3a6cdad318
 @Component({
   selector: 'app-registro',
   standalone: false,
@@ -28,6 +31,7 @@ export class Registro {
   usuario: Usuario = this.resetFormulario();
   notificacion: { tipo: string; mensaje: string } | null = null;
   cargando: boolean = false;
+<<<<<<< HEAD
   passwordTouched: boolean = false;
   private timeoutId: any = null;
 
@@ -38,6 +42,10 @@ export class Registro {
     { key: 'digit', label: 'Al menos un número (0-9)', valid: false },
   ];
 
+=======
+  private timeoutId: any = null;
+
+>>>>>>> 41617790ab247961548526b1a8b0eb3a6cdad318
   constructor(private service: TicketService, private router: Router) {}
 
   private mostrarNotificacion(tipo: string, mensaje: string): void {
@@ -47,7 +55,10 @@ export class Registro {
   }
 
   resetFormulario(): Usuario {
+<<<<<<< HEAD
     this.passwordTouched = false;
+=======
+>>>>>>> 41617790ab247961548526b1a8b0eb3a6cdad318
     return {
       Id: 0,
       Usuario: '',
@@ -58,6 +69,7 @@ export class Registro {
     };
   }
 
+<<<<<<< HEAD
   onPasswordChange(): void {
     const pwd = this.usuario.Contrasena;
     this.passwordReqs[0].valid = pwd.length >= 6;
@@ -73,11 +85,15 @@ export class Registro {
   RegistrarUsuario(): void {
     this.passwordTouched = true;
 
+=======
+  RegistrarUsuario(): void {
+>>>>>>> 41617790ab247961548526b1a8b0eb3a6cdad318
     if (!this.usuario.NombreCompleto || !this.usuario.Usuario || !this.usuario.Email || !this.usuario.Contrasena) {
       this.mostrarNotificacion('danger', 'Por favor completá todos los campos.');
       return;
     }
 
+<<<<<<< HEAD
     if (!this.passwordValida) {
       this.mostrarNotificacion('danger', 'La contraseña no cumple con los requisitos.');
       return;
@@ -85,6 +101,9 @@ export class Registro {
 
     this.cargando = true;
     this.notificacion = null;
+=======
+    this.cargando = true;
+>>>>>>> 41617790ab247961548526b1a8b0eb3a6cdad318
     const payload = {
       Username: this.usuario.Usuario,
       Password: this.usuario.Contrasena,
@@ -92,6 +111,7 @@ export class Registro {
       Fullname: this.usuario.NombreCompleto
     };
     this.service.RegistrarUsuario(payload).subscribe(
+<<<<<<< HEAD
       (resultado: any) => {
         this.cargando = false;
         if (resultado.estado) {
@@ -100,11 +120,21 @@ export class Registro {
         } else {
           this.mostrarNotificacion('danger', resultado.mensaje || 'Error al registrar el usuario.');
         }
+=======
+      (_resultado: any) => {
+        this.cargando = false;
+        this.mostrarNotificacion('success', 'Usuario registrado exitosamente. Revisá tu correo para confirmar la cuenta.');
+        this.usuario = this.resetFormulario();
+>>>>>>> 41617790ab247961548526b1a8b0eb3a6cdad318
       },
       (error: any) => {
         this.cargando = false;
         console.error('Error al registrar', error);
+<<<<<<< HEAD
         this.mostrarNotificacion('danger', 'Error al conectar con el servidor.');
+=======
+        this.mostrarNotificacion('danger', 'Error al registrar el usuario.');
+>>>>>>> 41617790ab247961548526b1a8b0eb3a6cdad318
       }
     );
   }

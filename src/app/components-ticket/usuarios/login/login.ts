@@ -106,7 +106,11 @@ export class Login implements OnInit, OnDestroy {
 
     this.service.Login(this.loginDTO).subscribe({
       next: (resultado: any) => {
+<<<<<<< HEAD
         if (resultado.estado) {
+=======
+        if (resultado.Estado) {
+>>>>>>> 41617790ab247961548526b1a8b0eb3a6cdad318
           if (this.recordar) {
             localStorage.setItem('isLogged', 'True');
             localStorage.setItem('emailRecordado', this.loginDTO.Username);
@@ -121,7 +125,11 @@ export class Login implements OnInit, OnDestroy {
           sessionStorage.setItem('logueado', 'true');
           this.router.navigate(['/']);
         } else {
+<<<<<<< HEAD
           this.mostrarNotificacion('danger', resultado.mensaje || 'Credenciales incorrectas.');
+=======
+          this.mostrarNotificacion('danger', resultado.Mensaje || 'Credenciales incorrectas.');
+>>>>>>> 41617790ab247961548526b1a8b0eb3a6cdad318
           this.manejarFallo();
         }
       },
