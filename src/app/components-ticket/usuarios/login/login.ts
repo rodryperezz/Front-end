@@ -3,8 +3,8 @@ import { Router } from '@angular/router';
 import { TicketService } from '../../../services-ticket/ticket-service';
 
 interface LoginDTO {
-  Email: string;
-  Contrasena: string;
+  Username: string;
+  Password: string;
 }
 
 @Component({
@@ -15,7 +15,7 @@ interface LoginDTO {
 })
 export class Login implements OnInit, OnDestroy {
 
-  loginDTO: LoginDTO = { Email: '', Contrasena: '' };
+  loginDTO: LoginDTO = { Username: '', Password: '' };
   notificacion: { tipo: string; mensaje: string } | null = null;
   recordar: boolean = false;
   bloqueado: boolean = false;
@@ -35,8 +35,8 @@ export class Login implements OnInit, OnDestroy {
       this.recordar = true;
       const savedEmail = localStorage.getItem('emailRecordado');
       const savedPass = localStorage.getItem('passRecordado');
-      if (savedEmail) this.loginDTO.Email = savedEmail;
-      if (savedPass) this.loginDTO.Contrasena = savedPass;
+      if (savedEmail) this.loginDTO.Username = savedEmail;
+      if (savedPass) this.loginDTO.Password = savedPass;
     }
     this.verificarBloqueo();
   }
@@ -99,8 +99,8 @@ export class Login implements OnInit, OnDestroy {
   Login(): void {
     if (this.bloqueado) return;
 
-    if (!this.loginDTO.Email || !this.loginDTO.Contrasena) {
-      this.mostrarNotificacion('danger', 'Por favor ingresá email y contraseña.');
+    if (!this.loginDTO.Username || !this.loginDTO.Password) {
+      this.mostrarNotificacion('danger', 'Por favor ingresá usuario y contraseña.');
       return;
     }
 
@@ -109,8 +109,8 @@ export class Login implements OnInit, OnDestroy {
         if (resultado.Estado) {
           if (this.recordar) {
             localStorage.setItem('isLogged', 'True');
-            localStorage.setItem('emailRecordado', this.loginDTO.Email);
-            localStorage.setItem('passRecordado', this.loginDTO.Contrasena);
+            localStorage.setItem('emailRecordado', this.loginDTO.Username);
+            localStorage.setItem('passRecordado', this.loginDTO.Password);
           } else {
             localStorage.removeItem('isLogged');
             localStorage.removeItem('emailRecordado');

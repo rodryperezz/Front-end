@@ -9,14 +9,14 @@
 
   <div class="auth-body">
     <div class="form-group">
-      <label class="form-label">Correo electrónico</label>
+      <label class="form-label">Nombre de usuario</label>
       <div class="input-icon-wrapper">
-        <i class="bi bi-envelope-fill"></i>
+        <i class="bi bi-person-fill"></i>
         <input
-          type="email"
+          type="text"
           class="form-control auth-input"
-          [(ngModel)]="loginDTO.Email"
-          placeholder="ejemplo@correo.com"
+          [(ngModel)]="loginDTO.Username"
+          placeholder="Ingresá tu usuario"
           [disabled]="bloqueado"
         />
       </div>
@@ -29,7 +29,7 @@
         <input
           type="password"
           class="form-control auth-input"
-          [(ngModel)]="loginDTO.Contrasena"
+          [(ngModel)]="loginDTO.Password"
           placeholder="••••••••"
           [disabled]="bloqueado"
         />

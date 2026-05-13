@@ -50,10 +50,16 @@ export class Registro {
     }
 
     this.cargando = true;
-    this.service.RegsitrarUsuario(this.usuario).subscribe(
+    const payload = {
+      Username: this.usuario.Usuario,
+      Password: this.usuario.Contrasena,
+      Email: this.usuario.Email,
+      Fullname: this.usuario.NombreCompleto
+    };
+    this.service.RegistrarUsuario(payload).subscribe(
       (_resultado: any) => {
         this.cargando = false;
-        this.mostrarNotificacion('success', 'Usuario registrado exitosamente.');
+        this.mostrarNotificacion('success', 'Usuario registrado exitosamente. Revisá tu correo para confirmar la cuenta.');
         this.usuario = this.resetFormulario();
       },
       (error: any) => {

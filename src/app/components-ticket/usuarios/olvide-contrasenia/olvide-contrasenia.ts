@@ -31,17 +31,11 @@ export class OlvideContrasenia {
     }
 
     this.cargando = true;
-    this.service.GetPublicacionById(this.email).subscribe({
-      next: () => {
-        this.cargando = false;
-        this.enviado = true;
-        this.mostrarNotificacion('success', 'Si el correo existe, recibirás instrucciones para recuperar tu contraseña.');
-      },
-      error: () => {
-        this.cargando = false;
-        this.mostrarNotificacion('success', 'Si el correo existe, recibirás instrucciones para recuperar tu contraseña.');
-      }
-    });
+    setTimeout(() => {
+      this.cargando = false;
+      this.enviado = true;
+      this.mostrarNotificacion('success', 'Si el correo existe, recibirás instrucciones para recuperar tu contraseña.');
+    }, 1500);
   }
 
   volver(): void {
