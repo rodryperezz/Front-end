@@ -148,6 +148,10 @@ export class Login implements OnInit, OnDestroy {
     this.cdr.detectChanges();
   }
 
+  olvideContrasenia(): void {
+    this.router.navigate(['/olvide-contrasenia']);
+  }
+
   get minutosBloqueo(): number {
     return Math.floor(this.tiempoRestante / 60);
   }

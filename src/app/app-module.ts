@@ -9,6 +9,7 @@ import { Publicaciones } from './Components/publicaciones/publicaciones/publicac
 import { Comentarios } from './Components/comentarios/comentarios/comentarios';
 import { Login } from './Components/usuarios/login/login';
 import { Registro } from './Components/usuarios/registro/registro';
+import { OlvideContrasenia } from './Components/usuarios/olvide-contrasenia/olvide-contrasenia';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { Registro } from './Components/usuarios/registro/registro';
     Publicaciones,
     Comentarios,
     Login,
-    Registro
+    Registro,
+    OlvideContrasenia
   ],
   imports: [
     BrowserModule,
